@@ -243,6 +243,6 @@ Principle of least privilege — viewers can observe, editors can author, deploy
 **Vittu Ramadasu Darshan**
 Master's in Data Science, University of New Haven (May 2026)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](YOUR_LINKEDIN_URL)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-green)](YOUR_PORTFOLIO_URL)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/YOUR_USERNAME)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/vitturamadasudarshan)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-green)](https://vtooooooo.github.io/portfolio/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/vtooooooo)
