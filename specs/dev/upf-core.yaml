@@ -1,0 +1,18 @@
+name: upf-core
+version: 1.0.0
+nf_type: CNF
+environment: dev
+owner: network-team
+description: User Plane Function - handles data packet routing in 5G core
+resources:
+  cpu: "1000m"
+  memory: "512Mi"
+  replicas: 2
+network:
+  port: 8805
+  protocol: UDP
+  expose: false
+tags:
+  - 5g
+  - core
+  - upf

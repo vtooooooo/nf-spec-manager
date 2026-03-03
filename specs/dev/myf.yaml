@@ -1,0 +1,15 @@
+description: ''
+environment: dev
+name: myf
+network:
+  expose: false
+  port: 8080
+  protocol: TCP
+nf_type: VNF
+owner: data-team
+resources:
+  cpu: 500m
+  memory: 256Mi
+  replicas: 1
+tags: []
+version: 1.0.0

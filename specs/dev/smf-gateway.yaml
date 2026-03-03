@@ -1,0 +1,18 @@
+name: smf-gateway
+version: 1.3.2
+nf_type: VNF
+environment: dev
+owner: gateway-team
+description: Session Management Function - manages PDU sessions
+resources:
+  cpu: "750m"
+  memory: "384Mi"
+  replicas: 2
+network:
+  port: 8080
+  protocol: HTTP
+  expose: false
+tags:
+  - 5g
+  - session
+  - smf

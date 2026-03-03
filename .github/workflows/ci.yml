@@ -1,0 +1,49 @@
+name: NF Spec CI Pipeline
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-specs:
+    name: Validate All NF Specs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pydantic pyyaml
+      - name: Validate all specs
+        run: |
+          python -c "
+          import os, sys
+          sys.path.insert(0, '.')
+          from core.validator import validate_spec
+          errors = []
+          for env in ['dev', 'staging', 'prod']:
+              folder = os.path.join('specs', env)
+              if not os.path.exists(folder): continue
+              for f in os.listdir(folder):
+                  if f.endswith(('.yaml', '.yml')):
+                      ok, _, msg = validate_spec(os.path.join(folder, f))
+                      if not ok: errors.append(f'{folder}/{f}: {msg}')
+                      else: print(f'PASS: {folder}/{f}')
+          if errors:
+              [print(e) for e in errors]
+              sys.exit(1)
+          print('All specs valid!')
+          "
+
+  lint:
+    name: Lint Python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install flake8
+      - run: flake8 core/ app.py --max-line-length=120 --ignore=E501,W503
