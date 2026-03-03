@@ -199,11 +199,3 @@ Why append-only audit log?
 Compliance and traceability — you need to know exactly what happened, when, and who did it. Deleting log entries defeats the purpose.
 
 ---
-
-## 👨‍💻 Author
-
-Vittu Ramadasu Darshan
-Master's in Data Science, University of New Haven (May 2026)
-LinkedIn: YOUR_LINKEDIN_URL
-Portfolio: YOUR_PORTFOLIO_URL
-GitHub: https://github.com/YOUR_USERNAME
