@@ -16,27 +16,7 @@ This project replaces that with a unified, governed, automated platform.
 
 ---
 
-## ✅ Solution Architecture
-
-Git Repo (single source of truth)
-        │
-        ▼
-GitHub Actions CI (validates all specs on every push)
-        │
-        ▼
-NF Spec Manager
-├── RBAC Layer        → Who can read/create/deploy/delete
-├── Validator         → Pydantic schema enforcement
-├── Deployment Engine → dev → staging → prod promotion
-├── Audit Logger      → Append-only SQLite log
-└── S3 Sync           → AWS S3 cloud backup and distribution
-        │
-        ▼
-Streamlit Web UI (accessible to non-technical stakeholders)
-
----
-
-## 🛠️ Tech Stack
+🛠️ Tech Stack
 
 Language          | Python 3.13
 Schema Validation | Pydantic v2
@@ -49,7 +29,7 @@ Access Control    | Custom RBAC
 
 ---
 
-## 🏗️ Project Structure
+🏗️ Project Structure
 
 nf-spec-manager/
 ├── core/
@@ -71,7 +51,7 @@ nf-spec-manager/
 
 ---
 
-## 🔐 Role-Based Access Control (RBAC)
+🔐 Role-Based Access Control (RBAC)
 
 Role       | Read | Create | Update | Deploy | Delete
 -----------|------|--------|--------|--------|-------
@@ -82,7 +62,7 @@ admin      |  Yes |   Yes  |   Yes  |   Yes  |  Yes
 
 ---
 
-## 🔄 Deployment Pipeline
+🔄 Deployment Pipeline
 
 dev ──► staging ──► prod
 
@@ -93,7 +73,7 @@ dev ──► staging ──► prod
 
 ---
 
-## ✅ NF Spec Schema
+✅ NF Spec Schema
 
 Every NF spec must conform to this structure:
 
@@ -117,7 +97,7 @@ tags:
 
 ---
 
-## 🚀 Running Locally
+🚀 Running Locally
 
 # Clone the repo
 git clone https://github.com/YOUR_USERNAME/nf-spec-manager.git
@@ -141,7 +121,7 @@ Open: http://localhost:8501
 
 ---
 
-## 👤 Demo Users
+👤 Demo Users
 
 Username | Password | Role
 ---------|----------|----------
@@ -152,7 +132,7 @@ admin    | admin123 | admin
 
 ---
 
-## 🔁 CI/CD Pipeline
+🔁 CI/CD Pipeline
 
 Every git push to main or dev automatically:
 1. Validates all YAML spec files against the Pydantic schema
@@ -161,7 +141,7 @@ Every git push to main or dev automatically:
 
 ---
 
-## 📜 Audit Log
+📜 Audit Log
 
 Every action is recorded with:
 - Timestamp    — when it happened
@@ -176,7 +156,7 @@ Audit logs are exportable as CSV from the UI.
 
 ---
 
-## ☁️ AWS S3 Integration
+☁️ AWS S3 Integration
 
 - Specs are automatically uploaded to S3 after every promotion
 - S3 bucket is organized by environment: specs/dev/, specs/staging/, specs/prod/
@@ -184,7 +164,7 @@ Audit logs are exportable as CSV from the UI.
 
 ---
 
-## 💡 Key Design Decisions
+💡 Key Design Decisions
 
 Why YAML for specs?
 Human-readable, version-controllable, and the industry standard for Kubernetes and cloud-native config.
