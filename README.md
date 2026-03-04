@@ -1,6 +1,6 @@
 # 🔧 NF Spec Manager
 
-A unified, automated, and governed solution for managing Network Function (NF) specifications across deployment environments — built as a portfolio project mirroring AT&T Labs' NF specification management challenge.
+A unified, automated, and governed solution for managing Network Function (NF) specifications across deployment environments to address a common challenge in the telecom network function lifecycle management.
 
 ---
 
